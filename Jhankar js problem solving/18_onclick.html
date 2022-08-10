@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Conceptual Learning</title>
+</head>
+
+<body><h1>Color Changer: 😍</h1>
+    <button onclick="handleCLick()">Tomato</button>
+    <button onclick="handleCLick2()">Pink</button>
+    <button id="green">Green</button>
+    <div>
+        <ul id="parent"> 
+           
+        </ul>
+    </div>
+    <input type="text" name="" id="input" placeholder="wirte something...">
+    <button id="update" onclick="handleSubmit()">update</button>
+    <button id="delete" onclick="handleDelete()">Delete</button>
+   
+    <script>
+        function handleCLick (){
+            document.body.style.backgroundColor ='tomato';
+        }
+        function handleCLick2 (){
+            document.body.style.backgroundColor ='pink';
+        }
+
+        document.getElementById('green').addEventListener('click', function greenme(){
+            document.body.style.backgroundColor ='green';
+        })
+
+        const handleSubmit=()=>{
+           let data = document.getElementById('input') ;
+           const para=document.getElementById('info');
+           const ul=document.getElementById('parent');
+           const li = document.createElement('li');
+           li.innerText = data.value;
+
+ul.appendChild(li);
+        
+        data.value = '';
+
+        }
+        const handleDelete=() => {
+            document.getElementById('parent').style.display="none";
+            
+        }
+  
+
+    </script>
+
+</body>
+
+</html>

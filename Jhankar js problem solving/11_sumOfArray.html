@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUm of array</title>
+</head>
+<body>
+    <h1>Sum of array</h1>
+
+    <script>
+        //Sum of Array !!!
+
+        let sum =[10,23,5,6,2,4,11];
+        var result =0;
+        for (let i=0;i<sum.length;i++){
+           var element=sum[i];
+
+           var result = result + element;
+
+            // console.log("Sum of Array: "+result);
+            
+            
+        
+        }
+
+        //Largest element of an Array
+        
+        let ages =[1,2,30,4,5];
+        let large = ages[0];
+       
+       function highest(arr){
+        for (let i=0;i<arr.length;i++){
+           var element=arr[i];
+         
+            if(element >large){
+                large=element;
+                
+            }
+           
+            
+        }
+         return large;
+       }
+   
+       
+       const largest = highest(ages);
+       console.log("largest value",largest);
+          
+ 
+
+
+const arr2=[3,2,5,10,10,13];
+let Lowest=arr2[0];
+       function LowestestNumber(arr2){
+        for(i=0;i<arr2.length;i++){
+            const element = arr2[i];
+            if(element < Lowest){
+                Lowest=element;
+            }
+        }
+
+
+        return Lowest;
+        
+       }
+     console.log("Lowest value: "+  LowestestNumber(arr2));
+       
+        
+    </script>
+    
+</body>
+</html>

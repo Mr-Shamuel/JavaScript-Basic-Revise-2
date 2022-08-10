@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Conceptual Learning</title>
+    <style>
+        .container{
+            display:flex;
+            padding:20px;
+        }
+       .container> div:nth-child(1){
+            background-color: purple;
+            margin:10px;
+            padding:10px;
+            color: white;
+
+        }
+       .container> div:nth-child(2){
+            background-color: green;
+            margin:10px;
+            padding:10px;
+            color: white;
+
+        }
+       .container> div:nth-child(3){
+            background-color: orangered;
+            margin:10px;
+            padding:10px;
+            color: white;
+
+        }
+        .container2{
+            margin:0px auto;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        input{
+width: 300px;
+            padding: 10px ;
+           font-weight: bolder;;
+             color: black;
+    
+        }
+        #with_btn{
+background-color:yellowgreen;
+            padding:  20px;
+            margin: 10px;
+            color: white;
+            border:none;
+            font-size: 20px;
+            cursor: pointer;
+            transition:0.4s ease;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+        #dipo_btn{
+            background-color:rgb(97, 22, 119);
+            padding:  20px;
+            margin: 10px;
+            color: white;
+            border:none;
+            font-size: 20px;
+            cursor: pointer;
+            transition:0.4s ease;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+        #dipo_btn:hover{
+            border:1px solid black;
+
+        }
+        #with_btn:hover{
+            border:1px solid black;
+
+        }
+   
+    </style>
+</head>
+
+<body> 
+ 
+<div class="container">
+    <div  class="diposit">
+        <h1>Diposit: $<span id="dipo">000</span></h1>
+    </div>
+    <div class="widtdraw">
+        <h1>Withdraw: $<span id="with">000</span></h1>
+    </div>
+ 
+    <div class="Balance">
+        <h1>Balance: $<span id="bal">1245</span></h1>
+    </div>
+     
+</div>
+
+,<div class="container2">
+   <div class="ammount">
+    <input type="text" name="" id="input" placeholder="Enter ammount">
+    <br></br>
+        <button id="dipo_btn" onclick="handleDipoButton()">Diposit </button>
+        <button id="with_btn" onclick="handleWithButton()">withdraw </button>
+</div>
+</div>
+    
+   
+    <script>
+        let inputValue = document.getElementById('input').value;
+        // console.log(inputValue);
+
+
+        const handleDipoButton =()=>{
+        //   let total_dipo =0;
+            let input =parseInt( document.getElementById('input').value);
+            let diposit =parseInt(document.getElementById('dipo').innerText);
+            let bal =parseInt(document.getElementById('bal').innerText);
+            //adding to diposit
+           let  total_dipo =diposit+input;
+           //adding to main balance
+            document.getElementById('dipo').innerText=total_dipo;
+            const balance = bal+input;
+            document.getElementById('bal').innerText=balance;
+        
+
+            //clear input
+            document.getElementById('input').value= '';
+         
+
+        }
+        const handleWithButton =()=>{
+            let input =parseInt( document.getElementById('input').value);
+            let withdraw =parseInt(document.getElementById('with').innerText);
+            let bal =parseInt(document.getElementById('bal').innerText);
+            
+            
+            const balance = bal - input;
+            if(balance>=0){
+                const total_with = input + withdraw;
+            document.getElementById('with').innerText=total_with;
+    
+            document.getElementById('bal').innerText=balance;
+        
+
+}else{
+    alert("Balance is low!!!");
+}
+          
+           document.getElementById('input').value = '';
+        }
+ 
+    </script>
+
+</body>
+
+</html>

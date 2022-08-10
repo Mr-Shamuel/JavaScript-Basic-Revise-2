@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT inside array</title>
+</head>
+<body>
+    <h1>Lowest age</h1>
+    <script>
+   var Students =[
+   { fname:'Abir', Lname:'Sheikh',age:25},
+   { fname:'Shamuel', Lname:'Molla',age:26},
+   { fname:'rana', Lname:'khan',age:22},
+   { fname:'rani', Lname:'khan',age:52},
+  
+
+   ];
+ 
+let cheapest = Students[0];
+for(const element of Students){
+    if(element.age < cheapest.age){
+        cheapest = element;
+       
+    }
+    
+}
+
+console.log("Lowest Age People Name: ",cheapest.fname);
+
+
+
+
+ 
+    </script>
+    
+</body>
+</html>

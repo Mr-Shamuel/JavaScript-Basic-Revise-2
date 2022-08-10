@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0</title>
+    <style>
+        .container{
+            display:flex;
+            padding:20px;
+        }
+       .container> div:nth-child(1){
+            background-color: purple;
+            margin:10px;
+            padding:10px;
+            color: white;
+
+        }
+       .container> div:nth-child(2){
+            background-color: green;
+            margin:10px;
+            padding:10px;
+            color: white;
+
+        }
+       .container> div:nth-child(3){
+            background-color: orangered;
+            margin:10px;
+            padding:10px;
+            color: white;
+
+        }
+        .container2{
+            margin:0px auto;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        input{
+width: 300px;
+            padding: 10px ;
+           font-weight: bolder;;
+             color: black;
+    
+        }
+        #with_btn{
+background-color:yellowgreen;
+            padding:  20px;
+            margin: 10px;
+            color: white;
+            border:none;
+            font-size: 20px;
+            cursor: pointer;
+            transition:0.4s ease;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+        #dipo_btn{
+            background-color:rgb(97, 22, 119);
+            padding:  20px;
+            margin: 10px;
+            color: white;
+            border:none;
+            font-size: 20px;
+            cursor: pointer;
+            transition:0.4s ease;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+        #dipo_btn:hover{
+            border:1px solid black;
+
+        }
+        #with_btn:hover{
+            border:1px solid black;
+
+        }
+   
+    </style>
+</head>
+
+<body> 
+ 
+<div class="container">
+    <div  class="diposit">
+        <h1>Diposit: $<span id="dipo">000</span></h1>
+    </div>
+    <div class="widtdraw">
+        <h1>Withdraw: $<span id="with">000</span></h1>
+    </div>
+ 
+    <div class="Balance">
+        <h1>Balance: $<span id="bal">1245</span></h1>
+    </div>
+     
+</div>
+
+,<div class="container2">
+   <div class="ammount">
+    <input type="text" name="" id="input" placeholder="Enter ammount">
+    <br></br>
+        <button id="dipo_btn" onclick="handleDipoButton()">Diposit </button>
+        <button id="with_btn" onclick="handleWithButton()">withdraw </button>
+</div>
+</div>
+    
+   
+    <script>
+
+        //update dipo /with
+    function getInput(inputs,typess){
+        let input =parseInt( document.getElementById(inputs).value);
+            let diposit =parseInt(document.getElementById(typess).innerText);
+            let balenceId =parseInt(document.getElementById("bal").innerText);
+            let  withdraw=parseInt(document.getElementById("with").innerText);
+            
+            console.log(balenceId);
+            let  total_dipo =diposit+input;
+            console.log(total_dipo);
+            if(input>0 && total_dipo <  balenceId ){
+               
+            let result=document.getElementById(typess);
+            result.innerText=total_dipo; 
+            document.getElementById('input').value= '';
+            return input;
+            }
+          
+            document.getElementById('input').value= '';
+
+           
+    }
+
+    //update balance
+    function updateBalance(bal,inputdata,isRight){
+        let balenceId =parseInt(document.getElementById(bal).innerText);
+  
+        if(isRight==true){
+        const balance = balenceId+inputdata;
+            document.getElementById('bal').innerText=balance;
+       }
+        else if(isRight==false){
+          
+          
+            const balance = balenceId-inputdata;
+    
+            if(balance>0 && balenceId>balance)
+            {
+                document.getElementById('bal').innerText=balance;
+            }
+        }
+        else
+           {
+            alert("wow")
+           }
+        
+        
+      }
+      
+
+         
+
+    // button on click
+        const handleDipoButton =()=>{
+           const inputdata= getInput('input','dipo');
+     if(inputdata>0){
+        updateBalance('bal',inputdata,true);
+     }
+
+           
+        }
+        const handleWithButton =()=>{
+            const inputdata= getInput('input','with');
+        
+        if(inputdata>0 ){
+            updateBalance('bal',inputdata,false);
+     }
+          
+        }
+
+
+
+ 
+ 
+    </script>
+
+</body>
+
+</html>

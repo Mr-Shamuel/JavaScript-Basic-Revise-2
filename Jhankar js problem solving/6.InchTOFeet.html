@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ich to feet</title>
+</head>
+<body>
+    <p >inch to feet / miles to kilo</p>
+
+    <script>
+    // inch to feet 
+    const inch=136;
+    const feet= 0.0833*inch;
+    console.log("mile",feet);
+
+    //mehod 2
+    const inch2 =36;
+    const feet2 = inch2 /12;
+    console.log("mile",feet2);
+
+    function inchToFeet(x){
+        return x/12;
+    }
+    const feet3=inchToFeet(24);
+   console.log(feet3);
+
+    //mile to kilometers
+    const mile =50;
+    const kilo = mile*1.6;
+    console.log("kilo",kilo);
+
+    //mile to kilo in function
+
+    function mileToKilo(mile){
+        return mile*1.6;
+    }
+    const kilo2=mileToKilo(50);
+    console.log(kilo2);
+      
+        
+    </script>
+    
+</body>
+</html>

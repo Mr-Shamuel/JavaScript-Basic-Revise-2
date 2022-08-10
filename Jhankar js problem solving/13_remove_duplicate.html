@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove duplicate Items</title>
+</head>
+<body>
+    <h2 >remove duplicate Items</h2>
+
+    <script>
+
+        //remove duplicate number from array:
+   
+      
+
+        //by using constructor 1
+function removeDuplicates(arr){
+    let uniqueArr = [...new Set(arr)];
+    console.log(uniqueArr);
+
+}
+// let array =[1,2,34,5,6,3,6,2];
+let array = ['sam','sami','rs','sam','rs','sami'];
+removeDuplicates(array);
+
+
+   //by using constructor 1
+  
+function removeDuplicates2(names){
+   
+    let uniqueArr = [];
+for(element of names){
+    if(uniqueArr.indexOf(element)==-1){
+        uniqueArr.push(element);
+    }
+}console.log(uniqueArr);
+
+return uniqueArr;
+}
+let names = ['sam','sami','rs','sam','rs','sami'];
+const result= removeDuplicates2(names);
+console.log("By For of loop "+result);
+ 
+ 
+        //even number of from array
+    //   let arr =[1,2,34,5,6,3,6,2];
+    //     let Even = 0;
+       
+    //    function highest(arr){
+    //     for (let i=1;i<arr.length;i++){
+    //        var element=arr[i];
+         
+    //         if(element %2 ==0){
+    //             Even=element;
+    //             document.write("Even Number :"+Even+"</br>");
+    //         }
+           
+            
+    //     }
+       
+    //      return Even;
+    //    }
+   
+       
+    //    const Evenst = highest(arr);
+    //    console.log("Evenst value",Even);
+          
+
+
+
+
+     
+    </script>
+    
+</body>
+</html>
